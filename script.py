@@ -6,7 +6,7 @@ import os
 # 1. Setup folders
 input_folder = 'raw-data'
 output_folder = 'processed-data'
-plots_folder = 'plots'  # New folder for visuals
+plots_folder = 'plots'  # New folder for the plots
 
 for folder in [output_folder, plots_folder]:
     if not os.path.exists(folder):
@@ -44,7 +44,7 @@ for filename in os.listdir(input_folder):
             # Save the plot to the specific plots folder
             plot_filename = filename.replace('.csv', '.png')
             plt.savefig(os.path.join(plots_folder, plot_filename))
-            plt.close()  # Closes the plot so it doesn't eat up RAM
+            plt.close()
 
             print(f"SUCCESS: {filename} -> Hex and Plot created.")
 
